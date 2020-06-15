@@ -25,9 +25,18 @@ console.log(every([], n => n < 10));
 // → true
 
 // Challenge 4. Dominant writing direction
-function dominantDirection(text) {
-  // Your code here.
+function dominantDirection(text , test) {
+  let direction = [];
+  for(let e of array){
+    if(test(e)){
+      direction.push(e);
+    }
+
+  }
+  return direction
 }
+
+console.log(dominantDirection("Hello!" , script => script.direction == "rtl"));
 
 console.log(dominantDirection("Hello!"));
 // → ltr

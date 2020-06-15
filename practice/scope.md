@@ -8,6 +8,7 @@ const lastName = "Stark";
 var knownAs = "no one";
 
 console.log(window.firstName, window.lastName, window.knownAs);
+// undefined , undefined , "no one" // only var has a window scope.
 ```
 
 2. Guess the output:
@@ -22,6 +23,8 @@ function fullName(a, b) {
 }
 
 console.log(window.fullName(firstName, lastName));
+//AryaStark
+
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
@@ -34,6 +37,7 @@ var one = addOne(0);
 var two = addOne(1);
 console.log(one, two);
 ```
+// 1 , 2
 
 4. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -45,6 +49,8 @@ fucntion addOne(num){
 var two = addOne(1);
 console.log(one, two);
 ```
+// 1, 2
+
 
 5. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -56,6 +62,9 @@ fucntion addOne(num){
 var two = addOne(1);
 console.log(two);
 ```
+// 1;
+// 2; 
+
 
 6. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -67,6 +76,7 @@ const addOne = num => {
 var two = addOne(1);
 console.log(two);
 ```
+// error, as it is arrow method, which is just an expression only.
 
 7. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -78,6 +88,7 @@ const addOne = num => {
 var two = addOne(1);
 console.log(two);
 ```
+// error
 
 8. What will be the output of the following
 
@@ -90,7 +101,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
-```
+``` // false
 
 9. What will be the output of the following
 
@@ -103,7 +114,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
-```
+```// true
 
 10. What will be the output of the following
 
@@ -116,7 +127,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
-```
+```// error 
 
 11. What will be the output of the following
 
@@ -130,7 +141,7 @@ function fullName(a, b) {
 }
 const name = fullName(firstName, lastName);
 console.log(name);
-```
+```// AryaStark 
 
 12. What will be the output of the following
 
@@ -144,7 +155,7 @@ function fullName(a, b) {
 }
 const name = fullName(firstName, lastName);
 console.log(name);
-```
+```//Arya Stark
 
 13. Guess the output of the code below with a reason.
 
@@ -155,7 +166,7 @@ function sayHello() {
 sayHello();
 
 console.log(name);
-```
+```// Arya Stark 
 
 14. Guess the output of the code below with a reason.
 
@@ -164,7 +175,7 @@ if (true) {
   var name = "Arya Stark";
 }
 console.log(name);
-```
+``` // Arya stark
 
 15. Guess the output of the code below with a reason.
 
@@ -173,7 +184,7 @@ if (true) {
   let name = "Arya Stark";
 }
 console.log(name);
-```
+```// Arya Stark
 
 16. Guess the output of the code below with a reason.
 
@@ -182,7 +193,7 @@ for (var i = 0; i < 20; i++) {
   //
 }
 console.log(i);
-```
+``` //20 
 
 17. Guess the output of the code below with a reason.
 
@@ -191,7 +202,7 @@ for (let i = 0; i < 20; i++) {
   //
 }
 console.log(i);
-```
+``` i is not defined 
 
 18. Guess the output of the code below with a reason.
 
@@ -200,7 +211,8 @@ for (var i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
 console.log(i, "second");
-```
+```// 20 , "second 
+// 20, "first"
 
 19. Guess the output of the code below with a reason.
 
@@ -209,7 +221,7 @@ for (let i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
 console.log(i, "second");
-```
+```// 20 seconds , 20 times: 20 "first";
 
 20. Guess the output and the reason behind that.
 
@@ -220,7 +232,7 @@ function sample() {
   }
   console.log(username);
 }
-```
+``` undefined, the function is not called 
 
 21. Guess the output and the reason behind that.
 
@@ -231,7 +243,7 @@ function sample() {
   }
   console.log(username);
 }
-```
+```undefined , the function is not called. 
 
 22. Guess the output and the reason behind that.
 
@@ -257,7 +269,7 @@ function sample() {
   }
   console.log(username, "second");
 }
-```
+``` undefined, the function is not called 
 
 24. Guess the output and the reason behind that.
 
@@ -270,7 +282,10 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
-```
+
+```// hello i am first 
+// hello i am second 
+// hello i am third
 
 25. Guess the output and the reason behind that.
 
@@ -283,7 +298,11 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
-```
+```// hello i am first 
+// hello i am second 
+// hello i am third
+
+
 
 26. Guess the output and the reason behind that.
 
@@ -296,7 +315,7 @@ if (true) {
   let username = "Hello World!";
   myFunc();
 }
-```
+``` cannot use userName before initializing 
 
 27. Guess the output and the reason behind that.
 
@@ -310,7 +329,7 @@ function outer() {
 }
 
 outer();
-```
+```//I love this movie called ${movie.toUpperCase()}" , as the inner function was caled and not returned.
 
 28. Guess the output and the reason behind that.
 
@@ -325,7 +344,7 @@ function outer() {
 }
 
 outer();
-```
+```//I love this movie called ${movie.toUpperCase()}" , as the inner function was called and not returned.
 
 29. Guess the output and the reason behind that.
 
@@ -344,7 +363,8 @@ function outer() {
 }
 
 outer();
-```
+```//I love this movie called ${movie.toUpperCase()}"
+
 
 30. Execute all the functions inside `allFunctions` variable using any loop. (Hint: use for of loop functions are object)
 
@@ -362,7 +382,12 @@ const divide = (a, b) => {
   return a / b;
 };
 
+
 let allFunctions = [add, sub, multiply, divide];
+
+for(let functions of allFunctions){
+  console.log(functions(20 , 10))
+}
 ```
 
 31. You have to pass 10 and 12 as initial value and find the final output when you pass the return value of one function as an input to the next function in the array `allFunctions`.
@@ -382,4 +407,7 @@ const divide = (a, b) => {
 };
 
 let allFunctions = [add, add, add, add, add, sub, sub, multiply, divide];
+for(let functions of function){
+  
+}
 ```
