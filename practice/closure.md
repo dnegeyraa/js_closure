@@ -3,7 +3,11 @@
 1. Write a function called `multiplyBy` that takes a `number` as an argument and returns a function. Returned function takes another `number` as an argument and returns the multiplication of both the numbers.
 
 ```js
-// Your code goes here
+ function multiplyBy(firstNumber){
+   return function double(secondNumber){
+     return firstNumber * secondNumber
+   }
+ }
 
 const double = multiplyBy(2);
 const final = double(15); // final should be 30
@@ -12,7 +16,11 @@ const final = double(15); // final should be 30
 2. Write a function called `fullName` that takes a string `firstName` as an argument and returns a function. Returned function takes another string `lastName` as an argument and returns full name.
 
 ```js
-// Your code goes here
+function fullName(firstName){
+  return function name(lastName){
+    return `${firstName} ${lastName}`
+  }
+}
 
 const name = fullName("Will");
 const final = name("Smith"); // final should be "Will Smith"
@@ -22,7 +30,13 @@ const final = name("Smith"); // final should be "Will Smith"
 
 ```js
 function isInBetween(a, b) {
-  // your code goes here
+  return function isChild(c){
+    if(a < c && c < b) {
+      return true ;
+    } else {
+      return false;
+    }
+  }
 }
 
 const isChild = isInBetween(10, 100);
@@ -35,8 +49,10 @@ isChild(103); // false
 
 ```js
 function letsWishThem(greeting) {
-  // your code goes here
+return function callWith(msg){
+return `${greeting} ${msg}`
 }
+} 
 
 const callWithHey = letsWishThem("Hey");
 const callWithHello = letsWishThem("Hello");
@@ -48,7 +64,10 @@ callWithHello("How Are You?"); // Hello How Are You?
 
 ```js
 function addGame(gameName) {
-  // your code goes here
+  let score = 0 ; 
+  return function scoreBoard(score){
+    console.log(`Score of ${gameName} is ${score ++}`)
+  }
 }
 
 // Output

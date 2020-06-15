@@ -26,9 +26,17 @@ The function `forEach` takes an array and a callback, and runs the callback on e
 ```js
 var alphabet = '';
 var letters = ['a', 'b', 'c', 'd'];
-forEach(letters, function(char) {
-  alphabet += char;
-});
+
+function forEach(letters , sortLetter) {
+  let alpha = ""
+  for(let letter of letters){
+    sortLetter(letter)
+  }
+  
+};
+function sortLetter(char){
+  return alphabet += char;
+}
 console.log(alphabet);   //prints 'abcd'
 ```
 
