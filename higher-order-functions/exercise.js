@@ -36,19 +36,47 @@ console.log(map([1, 2, 3], addTwo));
 function forEach(array, callback) {}
 
 // see for yourself if your forEach works!
-
+function forEach(letters , sortLetter) {
+    // let alpha = ""
+    for(var letter of letters){
+      sortLetter(letter)
+    }
+    
+  };
+  function sortLetter(char){
+    return alphabet += char;
+  }
 //--------------------------------------------------
 // Extension
 //--------------------------------------------------
 
 //Extension 1
-function mapWith(array, callback) {}
+function mapWith(array, sortLetter) {
+    array.forEach(function(e){
+        return sortLetter(e)
+    });
+    return array
+}
 
 //Extension 2
-function reduce(array, callback, initialValue) {}
+function reduce(num, addNum, initialValue) {
+    let acc = initialValue;
+    for (let numbers of num) {
+      acc = addNum(numbers, acc);
+    }
+    return acc;
+  }
+  
+  function addNum(input, acc) {
+    return acc + input;
+  }
 
 //Extension 3
-function intersection(arrays) {}
+function intersection(array1 , array2) {
+    arrays.reduce((acc, cv) => {
+
+    }, []) 
+}
 
 // console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
 // should log: [5, 15]
@@ -60,7 +88,9 @@ function union(arrays) {}
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
 //Extension 5
-function objOfMatches(array1, array2, callback) {}
+function objOfMatches(array1, array2, callback) {
+    
+}
 
 // console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], function(str) { return str.toUpperCase(); }));
 // should log: { hi: 'HI', bye: 'BYE', later: 'LATER' }
