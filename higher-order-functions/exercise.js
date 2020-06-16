@@ -72,24 +72,40 @@ function reduce(num, addNum, initialValue) {
   }
 
 //Extension 3
-function intersection(array1 , array2) {
-    arrays.reduce((acc, cv) => {
-
-    }, []) 
+function intersection(arrays, ...arr) {
+ for(let i = 0; i<arr.length; i++){
+   var result = arr[i].reduce((acc, iv){
+     if(arrays.includes(iv)){
+       acc.push(iv);
+     }
+     return acc;
+   },[])
+  arrays = result
+ }
+ return result; 
 }
 
 // console.log(intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20]));
 // should log: [5, 15]
 
 //Extension 4
-function union(arrays) {}
+
+function union(arrays, ...arr){
+  let newArray = arrays.concat(arr.flat(1));
+   newArray.reduce((acc, iv) {
+     if(acc.indexOf(iv)=== -1){
+       acc.push(iv);
+     }
+     return acc;
+   },[])
+}
 
 // console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
 
 //Extension 5
 function objOfMatches(array1, array2, callback) {
-    
+
 }
 
 // console.log(objOfMatches(['hi', 'howdy', 'bye', 'later', 'hello'], ['HI', 'Howdy', 'BYE', 'LATER', 'hello'], function(str) { return str.toUpperCase(); }));
