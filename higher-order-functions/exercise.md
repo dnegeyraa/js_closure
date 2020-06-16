@@ -79,6 +79,18 @@ Construct a function intersection that compares input arrays and returns a new a
 
 Construct a function union that compares input arrays and returns a new array that contains all elements. If there are duplicate elements, only add it once to the new array. Preserve the order of the elements starting from the first element of the first input array. Use reduce!
 
+```js
+
+  function union(arrays, ...arr){
+    let newArray = arrays.concat(arr.flat(1));
+     newArray.reduce((acc, iv){
+       if(acc.indexOf(iv)=== -1){
+         acc.push(iv);
+       }
+     },[])
+  }
+```
+
 ## Extension 5
 
 Construct a function `objOfMatches` that accepts two arrays and a callback. `objOfMatches` will build an object and return it. To build the object, `objOfMatches` will test each element of the first array using the callback to see if the output matches the corresponding element (by index) of the second array. If there is a match, the element from the first array becomes a key in an object, and the element from the second array becomes the corresponding value.
